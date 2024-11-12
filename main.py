@@ -34,6 +34,10 @@ def append_text(text):
 def clear_last():
     display.delete(display.index(tk.END)-1, tk.END)
 
+def clear_all():
+    display.delete(0, tk.END)
+
+
 for (text, row, col) in buttons:
     if text == '=':
         button = tk.Button(root, text=text, font=("Arial", 18), width=5, height=2, command=calculate)
@@ -44,5 +48,8 @@ for (text, row, col) in buttons:
 # Bouton pour effacer
 clear_button = tk.Button(root, text="<-", font=("Arial", 18), width=5, height=2, command=clear_last)
 clear_button.grid(row=1, column=3, padx=5, pady=5)
+
+clear_all_button = tk.Button(root, text="CE", font=("Arial", 18), width=5, height=2, command=clear_all)
+clear_all_button.grid(row=1, column=2, padx=5, pady=5)
 
 root.mainloop()
